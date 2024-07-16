@@ -15,6 +15,8 @@ import org.springframework.http.ResponseEntity;
 // import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 
+// import java.util.List;
+
 
 @RestController
 @RequestMapping("/candidate")
@@ -40,6 +42,16 @@ public class CondidateController {
          return ResponseEntity.badRequest().body(e.getMessage());
       }
    }
+
+   // @PostMapping("/CreateListUsers")
+   // public List<CandidateEntity> createList(@Valid @RequestBody List<CandidateEntity> candidates){
+   //    try {
+   //       var result = this.createCandidateService.execute(candidates);
+   //       return ResponseEntity.ok().body(result);
+   //    } catch (Exception e) {
+   //       // TODO: handle exception
+   //    }
+   // }
 
    //  @PostMapping("/create")
    //  public CandidateEntity create(@Valid @RequestBody CandidateEntity candidateEntity){
