@@ -49,7 +49,7 @@ public class CondidateController {
    //       var result = this.createCandidateService.execute(candidates);
    //       return ResponseEntity.ok().body(result);
    //    } catch (Exception e) {
-   //       // TODO: handle exception
+   //       
    //    }
    // }
 
