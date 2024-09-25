@@ -11,21 +11,26 @@ import br.com.igor.gestao_vagas.modules.company.entities.CompanyEntity;
 import br.com.igor.gestao_vagas.modules.company.services.CreateCompanyService;
 import jakarta.validation.Valid;
 
+// Controlador REST responsável pela manipulação de requisições relacionadas a empresas.
 @RestController
-@RequestMapping("/company")
+@RequestMapping("/company") // Define a rota base para as operações relacionadas a empresas.
 public class CompanyController {
-    
+
+    // Injeção de dependência do serviço de criação de empresas.
     @Autowired
     private CreateCompanyService companyService;
 
-    @PostMapping("/create")
+    // Método que manipula requisições POST para criar uma nova empresa.
+    @PostMapping("/create") // Define a rota específica para a criação de empresas.
     public ResponseEntity<Object> create(@Valid @RequestBody CompanyEntity companyEntity) {
         try {
+            // Chama o serviço para executar a lógica de criação e obtém o resultado.
             var result = this.companyService.execute(companyEntity);
-            return ResponseEntity.ok().body(result);
+            return ResponseEntity.ok().body(result); // Retorna o resultado com status HTTP 200 (OK).
         } catch (Exception e) {
-            e.printStackTrace();
-            return ResponseEntity.badRequest().body(e.getMessage());
+            e.printStackTrace(); // Imprime o stack trace da exceção no console para depuração.
+            return ResponseEntity.badRequest().body(e.getMessage()); // Retorna uma resposta com status HTTP 400 (Bad
+                                                                     // Request) e a mensagem de erro.
         }
     }
 }

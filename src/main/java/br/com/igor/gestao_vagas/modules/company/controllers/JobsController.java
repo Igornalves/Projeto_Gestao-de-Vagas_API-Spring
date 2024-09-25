@@ -10,15 +10,20 @@ import br.com.igor.gestao_vagas.modules.company.entities.JobsEntity;
 import br.com.igor.gestao_vagas.modules.company.services.CreateJobsService;
 import jakarta.validation.Valid;
 
+// Controlador REST responsável por manipular requisições relacionadas a vagas de emprego.
 @RestController
-@RequestMapping("/jobs")
+@RequestMapping("/jobs") // Define a rota base para as operações relacionadas a empregos.
 public class JobsController {
-    
+
+    // Injeção de dependência do serviço que lida com a criação de novas vagas de
+    // emprego.
     @Autowired
     private CreateJobsService jobsService;
 
-    @PostMapping("/create")
-    public JobsEntity create(@Valid @RequestBody JobsEntity jobsEntity){
+    // Método que manipula requisições POST para criar uma nova vaga de emprego.
+    @PostMapping("/create") // Define a rota específica para a criação de empregos.
+    public JobsEntity create(@Valid @RequestBody JobsEntity jobsEntity) {
+        // Chama o serviço de criação de empregos e retorna a entidade criada.
         return this.jobsService.execute(jobsEntity);
     }
 }

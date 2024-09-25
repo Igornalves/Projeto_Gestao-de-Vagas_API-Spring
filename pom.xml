@@ -30,29 +30,53 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
+		<!-- Esta dependência é um starter do Spring Boot que inclui tudo o que é necessário para
+         desenvolver aplicações web, como suporte a REST, MVC, e configurações básicas
+         para usar o Spring MVC, Jackson para conversão de objetos Java em JSON, e Tomcat como
+         servidor embutido. É essencial para criar aplicações web baseadas em Spring Boot. -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		
-		<!-- Dependencia para validacao de dados ao ser enviados  -->
+		<!-- Esta dependência fornece suporte para validação em aplicações Spring Boot,
+         incluindo a integração com a biblioteca Hibernate Validator, que é a
+         implementação de referência da especificação Bean Validation (JSR 380).
+         Com esta dependência, você pode aplicar anotações de validação em
+         modelos, facilitando a validação de dados de entrada, como campos de
+         formulários, e garantindo que os dados atendam a certos critérios antes
+         de serem processados pela aplicação. -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
 
-		<!-- JPA/Hibernete ORM para conexao com banco de dados -->
+		<!-- Esta dependência é um starter do Spring Boot que fornece suporte para
+         a implementação da JPA (Java Persistence API) e facilita a interação
+         com bancos de dados relacionais. Inclui bibliotecas como Hibernate e
+         configurações básicas para trabalhar com repositórios, permitindo que
+         você acesse e manipule dados de forma fácil e intuitiva, utilizando
+         anotações e métodos do Spring Data JPA. -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 
-		<!-- Dependencia para Seguranca da Aplicacao de forma completa -->
+		<!-- Esta dependência fornece suporte para segurança em aplicações Spring Boot.
+         Inclui o Spring Security, que é um framework poderoso para autenticação e
+         autorização. Com esta dependência, você pode facilmente configurar a segurança
+         da sua aplicação, protegendo rotas, gerenciando usuários e integrando com
+         diferentes métodos de autenticação, como formulários, tokens JWT e OAuth2. -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 
+		<!-- Esta dependência é usada para facilitar o desenvolvimento,
+         fornecendo funcionalidades como o auto-restart da aplicação
+         sempre que há mudanças no código. Ela é marcada como 'optional' 
+         para que não seja incluída nas dependências transitivas e tem escopo 'runtime',
+         ou seja, é utilizada apenas em tempo de execução, não em produção. -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -60,13 +84,23 @@
 			<optional>true</optional>
 		</dependency>
 
+		<!-- Esta dependência fornece suporte para testes em aplicações Spring Boot.
+         Inclui bibliotecas como JUnit, AssertJ, Hamcrest, e Mockito, que facilitam a
+         criação de testes unitários e de integração. O escopo 'test' indica que
+         essa dependência só é usada durante o desenvolvimento e não será incluída
+         na versão final da aplicação. -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 
-		<!-- Dependencia para genreciar o Gets e Sets mais contrutores das entidades da Aplicacao -->
+		<!-- Esta dependência é a biblioteca Lombok, que facilita o desenvolvimento
+         em Java ao reduzir a quantidade de código boilerplate, como getters, setters,
+         construtores e métodos equals/hashCode. O escopo 'provided' indica que a
+         biblioteca é necessária para o desenvolvimento, mas não será incluída
+         no pacote final da aplicação, pois é esperada estar disponível no ambiente
+         em que a aplicação será executada. -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -74,14 +108,23 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- Dependencia para a localizacao do Drive do DB PostgreSQL -->
+		 <!-- Esta dependência é o driver JDBC para o PostgreSQL, permitindo que 
+         aplicações Java se conectem a bancos de dados PostgreSQL. A versão 
+         especificada é 42.7.3. Este driver é essencial para executar operações
+         de banco de dados, como consultas e atualizações, utilizando a API
+         JDBC. Sem ele, a aplicação não seria capaz de interagir com um banco
+         de dados PostgreSQL. -->
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<version>42.7.3</version>
 		</dependency>
 
-		<!-- java-jwt para criacao de Tokens na aplicacao -->
+		<!-- Esta dependência é a biblioteca 'java-jwt' da Auth0, que fornece
+         funcionalidades para trabalhar com JSON Web Tokens (JWT). Com esta
+         biblioteca, você pode criar, assinar e verificar tokens JWT de forma
+         fácil e segura, o que é útil para autenticação e autorização em aplicações
+         baseadas em Spring. A versão especificada é 4.4.0. -->
 		<dependency>
 			<groupId>com.auth0</groupId>
 			<artifactId>java-jwt</artifactId>
