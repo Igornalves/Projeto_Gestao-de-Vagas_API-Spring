@@ -120,6 +120,20 @@
 			<version>42.7.3</version>
 		</dependency>
 
+		<!-- 
+		A dependência `springdoc-openapi-starter-webmvc-ui` integra o suporte ao OpenAPI com projetos Spring Boot que utilizam Spring MVC. 
+		1. OpenAPI é uma especificação usada para descrever APIs REST, permitindo que você documente suas rotas, endpoints, parâmetros, respostas e outros detalhes relacionados à sua API de forma padronizada.
+		2. Com essa dependência, o Springdoc gera automaticamente uma documentação em tempo de execução com base nas rotas da aplicação e nas anotações existentes (como `@RestController`, `@RequestMapping`, `@GetMapping`, etc.).
+		3. A versão `2.6.0` inclui o suporte para OpenAPI 3.0 e vem com uma interface gráfica embutida, conhecida como Swagger UI. Isso permite que você visualize e interaja com os endpoints da API diretamente no navegador, acessando uma interface amigável para testar as requisições e verificar as respostas.
+		4. Em resumo, essa dependência automatiza o processo de geração de documentação da API e oferece uma interface visual (Swagger UI) para facilitar o consumo e o entendimento das rotas e funcionalidades expostas pela API.
+		-->
+		<!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-starter-webmvc-ui -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.6.0</version>
+		</dependency>
+
 		<!-- Esta dependência é a biblioteca 'java-jwt' da Auth0, que fornece
          funcionalidades para trabalhar com JSON Web Tokens (JWT). Com esta
          biblioteca, você pode criar, assinar e verificar tokens JWT de forma
